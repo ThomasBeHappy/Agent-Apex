@@ -60,7 +60,7 @@ client.on("message", async message => {
     const command = args.shift().toLowerCase();
 
     if (command === "purge") {
-        if (message.member.roles.find("name", Council) || message.member.roles.find("name", Trium) || message.member.roles.find("name", Moderator)) {
+        if (message.member.roles.find("name", Admin) || message.member.roles.find("name", Council) || message.member.roles.find("name", Trium) || message.member.roles.find("name", Moderator)) {
             const deleteCount = parseInt(args[0], 10);
 
             if (!deleteCount || deleteCount < 2 || deleteCount > 100)
