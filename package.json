@@ -1,0 +1,17 @@
+{
+  "name": "agent-apex",
+  "version": "1.0.0",
+  "description": "The Protector of Apex Zone!",
+  "main": "app.js",
+  "author": "Thomas",
+  "dependencies": {
+    "discord-anti-spam": "^1.1.2",
+    "discord.js": "^11.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+	"start": "node app.js"
+  },
+  "license": "ISC"
+}
