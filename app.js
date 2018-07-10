@@ -96,6 +96,9 @@ client.on("message", async message => {
         const m = await message.channel.send("Ping?");
         m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
     }
+    if (command === "help") {
+        message.channel.send("**!purge {amount}** | *this removes the amount of messages you entered in {amount}*\n**!warn {mention user} -r {reason}** | *this warns the {mention user} for the reason {reason}*\n**!resolve {user id} {warn id}** | *this resolved the warning of {user id} with the warn id of {warn id}*\n**!kick {mention user} {reason}** | *if you piece of crap don't know what this does you dumb xD*\n**!ban {mention user} {reason}** | *same as with the kick if you don't know you suck lol*")
+    }
     if (command === "warn") {
         if (message.member.roles.find("name", Admin) || message.member.roles.find("name", Council) || message.member.roles.find("name", Trium) || message.member.roles.find("name", Moderator)) {
 
