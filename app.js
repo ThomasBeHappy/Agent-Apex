@@ -157,6 +157,7 @@ client.on("message", async message => {
                         message.reply("Resolved Warning" + WarnID);
                         warns[wUserID].warns--;
                         delete warns[wUserID].WarnIDS[i];
+                        fs.writeFile("warnings.json", JSON.stringify(warns), (err) => {
                     }
                 }
             }
