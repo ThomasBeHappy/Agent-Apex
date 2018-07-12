@@ -158,6 +158,10 @@ client.on("message", async message => {
                         warns[wUserID].warns--;
                         delete warns[wUserID].WarnIDS[i];
                         fs.writeFile("warnings.json", JSON.stringify(warns), (err) => {
+                           if (err) {
+                           message.reply("ERROR: " + err.message);
+                           }
+                       });                    
                     }
                 }
             }
