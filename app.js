@@ -146,6 +146,7 @@ client.on("message", async message => {
         }
     }
     if (command === "resolve") {
+     try {
         if (message.member.roles.find("name", Admin) || message.member.roles.find("name", Council) || message.member.roles.find("name", Trium) || message.member.roles.find("name", Moderator)) {
             if (!args) {
                 message.reply("You have to supply a User ID and Warn ID");
@@ -166,6 +167,9 @@ client.on("message", async message => {
                 }
             }
         }
+     } catch (err) {
+      message.reply("ERROR: " + err.message);
+     }
     }
 
     if (command === "kick") {
