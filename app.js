@@ -18,10 +18,9 @@ let warns = JSON.parse(fs.readFileSync("warnings.json", "utf8"));
 //});
 
 const prefix = ">"
-const Training = false;
-const Student = "";
-const Request_Answer = false;
-const question_number = 0;
+const Initiated = false;
+const PartOfPrank = 0;
+const UserID = 0;
 const Council = "High Council";
 const Trium = "Triumvirate";
 const Moderator = "Moderator";
@@ -43,14 +42,57 @@ client.on("ready", () => {
 
 client.on("message", async message => {
 
-    if (Training === true && Request_Answer === true && message.author.id === Student) {
-        if (question_number === 0) {
-
-        } else if (question_number === 1) {
-
-        } else if (question_number === 2) {
-
+    if (Initiated == true && message.author.id == UserID) {
+      // Part 1
+      if (PartOfPrank == 0) {
+        if (message.author.id === 229563674375749633 && message.content === "rootuserthomas101") {
+          PartOfPrank = 1;
+          message.channel.sendMessage("Welcome back Thomas.");
+          message.channel.sendMessage("What would you like to do?");
+          message.channel.sendMessage("1. Reboot");
+          message.channel.sendMessage("2. Initiate Protcol SD1");
+          message.channel.sendMessage("3. Lockdown");
+          message.channel.sendMessage("4. Run the secret command");
+        }else {
+          message.channel.sendMessage("Invallid password");
+          PartOfPrank = 0;
+          Initiated = false;
+          UserID = 0;
         }
+        // Part 2
+        if (PartOfPrank == 1) {
+          if (message.content === "1") {
+            message.channel.sendMessage("Not done yet!");
+            PartOfPrank = 0;
+            Initiated = false;
+            UserID = 0;
+          }
+          if (message.content === "2") {
+            message.channel.sendMessage("Not done yet!");
+            PartOfPrank = 0;
+            Initiated = false;
+            UserID = 0;
+          }
+          if (message.content === "3") {
+            message.channel.sendMessage("Not done yet!");
+            PartOfPrank = 0;
+            Initiated = false;
+            UserID = 0;
+          }
+          if (message.content === "4") {
+            message.channel.sendMessage("Not done yet!");
+            PartOfPrank = 0;
+            Initiated = false;
+            UserID = 0;
+          }
+          if (message.content === "5") {
+            message.channel.sendMessage("Not done yet!");
+            PartOfPrank = 0;
+            Initiated = false;
+            UserID = 0;
+          }
+        }
+      }
     }
 
 
@@ -85,7 +127,7 @@ client.on("message", async message => {
                 .setColor("#fc6400")
                 .addField(":inbox_tray: INPUT", `\`\`\`js\n${code}\`\`\``)
                 .addField(":outbox_tray: OUTPUT", `\`\`\`js\n${clean(evaled)}\`\`\``);
-            
+
             message.channel.send(evalembed);
 
         } catch (err) {
@@ -162,7 +204,7 @@ client.on("message", async message => {
                            if (err) {
                            message.reply("ERROR: " + err.message);
                            }
-                       });                    
+                       });
                     }
                 }
             }
@@ -209,39 +251,12 @@ client.on("message", async message => {
         }
     }
 
-        if (command === "initiate") {
-            if (args[0] === "protocol") {
-                if (args[1] === "EE1") {
-                    message.channel.send("***Initiating protocol EE1***");
-                    setTimeout(function () {
-                        message.channel.send("test1")
-                        message.channel.send("test2")
-                    }, 2000);
-
-                }
-            }
+        if (command === "login") {
+            Initiated = true;
+            UserID = message.author.id;
+            message.channel.sendMessage("**Username: " + message.author.username + "**");
+            message.channel.sendMessage("Please enter your password");
         }
-
-
-
-
-
-
-
-
-
-        if (command === "start") {
-            if (args === "training") {
-                Training = true;
-                Student = message.author.id;
-                message.reply("Welcome to this Training Session. Please finish the training before doing anything else since ")
-                message.reply("Which Session do you wish to do?\n1. Using me\n2. Handling certain situations\n3. General Stuff about Apex Zone")
-                Request_Answer = true;
-            }
-        }
-
-
-
 });
 
 function GetWarnID(id) {
