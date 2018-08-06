@@ -45,14 +45,16 @@ client.on("message", async message => {
     if (Initiated == true && message.author.id == UserID) {
       // Part 1
       if (PartOfPrank == 0) {
-        if (message.author.id === 229563674375749633 && message.content === "rootuserthomas101") {
-          PartOfPrank = 1;
-          message.channel.sendMessage("Welcome back Thomas.");
-          message.channel.sendMessage("What would you like to do?");
-          message.channel.sendMessage("1. Reboot");
-          message.channel.sendMessage("2. Initiate Protcol SD1");
-          message.channel.sendMessage("3. Lockdown");
-          message.channel.sendMessage("4. Run the secret command");
+        if (message.author.id === 229563674375749633) {
+         if (message.content === "rootuserthomas101") {
+           PartOfPrank = 1;
+           message.channel.sendMessage("Welcome back Thomas.");
+           message.channel.sendMessage("What would you like to do?");
+           message.channel.sendMessage("1. Reboot");
+           message.channel.sendMessage("2. Initiate Protcol SD1");
+           message.channel.sendMessage("3. Lockdown");
+           message.channel.sendMessage("4. Run the secret command");
+         }
         }else {
           message.channel.sendMessage("Invallid password");
           PartOfPrank = 0;
