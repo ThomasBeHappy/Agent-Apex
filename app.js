@@ -45,7 +45,7 @@ client.on("message", async message => {
     if (Initiated == true && message.author.id == UserID) {
       // Part 1
       if (PartOfPrank == 0) {
-        if (message.author.id === 229563674375749633) {
+        if (message.author.id === "229563674375749633") {
          if (message.content === "rootuserthomas101") {
            PartOfPrank = 1;
            message.channel.sendMessage("Welcome back Thomas.");
