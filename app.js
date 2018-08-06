@@ -18,9 +18,9 @@ let warns = JSON.parse(fs.readFileSync("warnings.json", "utf8"));
 //});
 
 const prefix = ">"
-const Initiated = false;
-const PartOfPrank = 0;
-const UserID = 0;
+let Initiated = false;
+let PartOfPrank = 0;
+let UserID = 0;
 const Council = "High Council";
 const Trium = "Triumvirate";
 const Moderator = "Moderator";
