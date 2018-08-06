@@ -36,7 +36,6 @@ function clean(text) {
 client.on("ready", () => {
     console.log("AGENT APEX IS HERE FOR THE RESCUE");
     client.user.setActivity(`Operation Protect Apex Zone`);
-    client.guilds.find("name", "Apex Zone").channels.get(ModerationChannelID).sendMessage("**Agent Apex is online and ready to protect Apex Zone!**");
 });
 
 
@@ -62,7 +61,7 @@ client.on("message", async message => {
           UserID = 0;
         }
         // Part 2
-        if (PartOfPrank == 1) {
+        if (PartOfPrank === 1) {
           if (message.content === "1") {
             message.channel.sendMessage("Not done yet!");
             PartOfPrank = 0;
