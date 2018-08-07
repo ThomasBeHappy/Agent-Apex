@@ -50,7 +50,7 @@ client.on("message", async message => {
            message.channel.sendMessage("Welcome back Thomas.");
            message.channel.sendMessage("What would you like to do?");
            message.channel.sendMessage("1. Reboot");
-           message.channel.sendMessage("2. Initiate Protcol SD1");
+           message.channel.sendMessage("2. SD1");
            message.channel.sendMessage("3. Lockdown");
            message.channel.sendMessage("4. Run the secret command");
          }
@@ -62,31 +62,31 @@ client.on("message", async message => {
         }
         // Part 2
         if (PartOfPrank === 1) {
-          if (message.content === "1") {
+          if (message.content === "reboot") {
             message.channel.sendMessage("Not done yet!");
             PartOfPrank = 0;
             Initiated = false;
             UserID = 0;
           }
-          if (message.content === "2") {
+          if (message.content === "SD1") {
             message.channel.sendMessage("Not done yet!");
             PartOfPrank = 0;
             Initiated = false;
             UserID = 0;
           }
-          if (message.content === "3") {
+          if (message.content === "lockdown") {
             message.channel.sendMessage("Not done yet!");
             PartOfPrank = 0;
             Initiated = false;
             UserID = 0;
           }
-          if (message.content === "4") {
+          if (message.content === "secret") {
             message.channel.sendMessage("Not done yet!");
             PartOfPrank = 0;
             Initiated = false;
             UserID = 0;
           }
-          if (message.content === "5") {
+          if (message.content === "omega") {
             message.channel.sendMessage("Not done yet!");
             PartOfPrank = 0;
             Initiated = false;
