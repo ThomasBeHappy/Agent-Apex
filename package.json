@@ -6,12 +6,13 @@
   "author": "Thomas",
   "dependencies": {
     "discord-anti-spam": "^1.1.2",
-    "discord.js": "^11.3.2"
+    "discord.js": "^11.3.2",
+    "heroku-client": "^3.0.6"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	  "start": "node app.js"
+    "start": "node app.js"
   },
   "license": "ISC"
 }
