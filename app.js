@@ -1,5 +1,8 @@
 const Discord = require("discord.js");
 const client = new Discord.Client;
+const Heroku = require('heroku-client');
+var appName = 'yourAppName here';
+var dynoName = 'yourDynoHere';
 const fs = require("fs")
 const ModerationChannelID = "456808712976203777";
 const StaffChannelID = "310841081468026880";
@@ -64,7 +67,10 @@ client.on("message", async message => {
         // Part 2
         if (PartOfPrank === 1) {
           if (message.content === "1") {
-            message.channel.sendMessage("Not done yet!");
+            
+			const heroku = new Heroku({ token: process.env.HEROKU_API_TOKEN })
+			heroku .delete('/apps/' + appName + '/dynos/' + dynoName)
+           .then( x => console.log(x) );
             PartOfPrank = 0;
             Initiated = false;
             UserID = 0;
