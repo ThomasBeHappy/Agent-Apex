@@ -32,13 +32,13 @@ const Moderator = "Moderator";
 const Admin = "Administrator";
 
 let main = function * () {
-  let apps  = yield hk.get('/apps')
+  let apps  = yield heroku.get('/apps')
   let dynos = yield apps.map(getDynos)
 
   console.log(dynos)
 
   function getDynos(app) {
-    return hk.get(`/apps/${app.name}/dynos`)
+    return heroku.get(`/apps/${app.name}/dynos`)
   }
 }
 
