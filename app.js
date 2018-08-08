@@ -42,7 +42,7 @@ let main = function * () {
   }
 }
 
-co(main)()
+co(main)
 
 function clean(text) {
     if (typeof (text) === "string")
