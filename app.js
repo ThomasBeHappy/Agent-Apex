@@ -29,18 +29,6 @@ const Trium = "Triumvirate";
 const Moderator = "Moderator";
 const Admin = "Administrator";
 
-let main = function * () {
-  let apps  = yield heroku.get('/apps')
-  let dynos = yield apps.map(getDynos)
-
-  console.log(dynos)
-
-  function getDynos(app) {
-    return heroku.get(`/apps/${app.name}/dynos`)
-  }
-}
-
-co(main)
 
 function clean(text) {
     if (typeof (text) === "string")
