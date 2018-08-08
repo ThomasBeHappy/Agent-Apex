@@ -7,7 +7,8 @@
   "dependencies": {
     "discord-anti-spam": "^1.1.2",
     "discord.js": "^11.3.2",
-    "heroku-client": "^3.0.6"
+    "heroku-client": "^3.0.6",
+    "co": "^4.0.0"
   },
   "devDependencies": {},
   "scripts": {
