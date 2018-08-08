@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client;
+const co     = require('co')
 const Heroku = require('heroku-client');
 const heroku = new Heroku({ token: process.env.HEROKU_API_TOKEN })
 var appName = 'yourAppName here';
@@ -29,6 +30,19 @@ const Council = "High Council";
 const Trium = "Triumvirate";
 const Moderator = "Moderator";
 const Admin = "Administrator";
+
+let main = function * () {
+  let apps  = yield hk.get('/apps')
+  let dynos = yield apps.map(getDynos)
+
+  console.log(dynos)
+
+  function getDynos(app) {
+    return hk.get(`/apps/${app.name}/dynos`)
+  }
+}
+
+co(main)()
 
 function clean(text) {
     if (typeof (text) === "string")
