@@ -80,6 +80,7 @@ client.on("message", async message => {
         // Part 2
         if (PartOfPrank === 1) {
           if (message.content === "1") {
+            message.channel.send("Rebooting please standby...\nThis will only take around 2 seconds.")
    	        heroku.delete('/apps/agent-apex/dynos/worker.1').then( x => console.log(x) );
             PartOfPrank = 0;
             Initiated = false;
