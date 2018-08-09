@@ -51,12 +51,13 @@ client.on("message", async message => {
         if (message.author.id === "229563674375749633") {
          if (message.content === "rootuserthomas101") {
            PartOfPrank = 1;
-           message.channel.sendMessage("Welcome back Thomas.");
-           message.channel.sendMessage("What would you like to do?");
-           message.channel.sendMessage("1. Reboot");
-           message.channel.sendMessage("2. Run protocol SD1");
-           message.channel.sendMessage("3. Lockdown");
-           message.channel.sendMessage("4. Run the secret command");
+           let AdminPanel = new Discord.RichEmbed()
+           .setTitle("**Admin Panel**")
+           .setColor("#00ffff")
+           .addField("1. Reboot")
+           .addField("2. Run protocol SD1")
+           .addField("3. Lockdown");
+           message.channel.send(AdminPanel);
          }
         }else {
           message.channel.sendMessage("Invallid password");
