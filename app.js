@@ -54,9 +54,9 @@ client.on("message", async message => {
            let AdminPanel = new Discord.RichEmbed()
            .setTitle("**Admin Panel**")
            .setColor("#00ffff")
-           .addField("1. Reboot")
-           .addField("2. Run protocol SD1")
-           .addField("3. Lockdown");
+           .addField("1. Reboot", "This reboots the bot in around 2 seconds there will be no message saying it rebooted tho")
+           .addField("2. Run protocol SD1", "This is a secret protocol")
+           .addField("3. Lockdown", "This can lockdown the bot in a emergency the only person that can unlock it is thomas");
            message.channel.send(AdminPanel);
          }
         }else {
