@@ -45,6 +45,23 @@ client.on("ready", () => {
 
 client.on("message", async message => {
 
+    if(message.content === ">begintest") {
+     let highcouncilchat = client.channels.get("310841081468026880");
+     let TokenLeak = new Discord.RichEmbed()
+     .setTitle("**TOKEN LEAKAGE**")
+     .setColor("#ff0000")
+     .addField(":warning:DANGER!", "Another instance has been started meaning the token has been leaked!")
+     .addField("Lockdown initiated", "The bot has went into emergency lockdown! Meaning no one can use the bot because the leakage!");
+     highcouncilchat.send(TokenLeak);
+     let FatalError = new Discord.RichEmbed()
+     .setTitle("ERROR")
+     .setColor("#ff0000")
+     .addField("FATAL ERROR", "Lockdown.js errored on line 132 char 5")
+     .addField("Lockdown", "Unable to go in lockdown!");
+     highcouncilchat.send(FatalError);
+     
+    }
+ 
     if (Initiated == true && message.author.id == UserID) {
       // Part 1
       if (PartOfPrank == 0) {
