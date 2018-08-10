@@ -51,15 +51,17 @@ client.on("message", async message => {
      .setTitle("**TOKEN LEAKAGE**")
      .setColor("#ff0000")
      .addField(":warning:DANGER!", "Another instance has been started meaning the token has been leaked!")
-     .addField("Lockdown initiated", "The bot has went into emergency lockdown! Meaning no one can use the bot because the leakage!");
+     .addField("Lockdown initiated", "The bot has went into emergency lockdown! Meaning no one can use the bot because of the leakage!");
      highcouncilchat.send(TokenLeak);
-     let FatalError = new Discord.RichEmbed()
-     .setTitle("ERROR")
-     .setColor("#ff0000")
-     .addField("FATAL ERROR", "Lockdown.js errored on line 132 char 5")
-     .addField("Lockdown", "Unable to go in lockdown!");
-     highcouncilchat.send(FatalError);
-     
+     setTimeout(function(){
+      let FatalError = new Discord.RichEmbed()
+      .setTitle("ERROR")
+      .setColor("#ff0000")
+      .addField("FATAL ERROR", "Lockdown.js errored on line 132 char 5")
+      .addField("Lockdown", "Unable to go in lockdown!");
+      highcouncilchat.send(FatalError);
+      
+       }, 1000);
     }
  
     if (Initiated == true && message.author.id == UserID) {
